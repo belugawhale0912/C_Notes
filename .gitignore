@@ -1,0 +1,36 @@
+# Compiled binaries / object files
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.out
+*.exe
+*.dll
+*.lib
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Debug / core files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+core
+core.*
+vgcore.*
+
+# Build directories
+build/
+bin/
+obj/
+
+# Editor / tooling artifacts
+*.swp
+*~
+.vscode/
+.idea/
+compile_commands.json
