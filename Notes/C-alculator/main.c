@@ -15,7 +15,6 @@ int main(){
 	printf("Enter second number: ");
 	scanf("%f", &numberB);
 
-	getchar();
 	printf("Choose operator ( + |  - | * | / ): ");
 	scanf(" %c", &operator);
 
@@ -37,7 +36,7 @@ int main(){
 			return 0;
 	}
 
-	printf("The result for %.2f %c %.2f is %.2f", numberA, operator, numberB, result);
+	printf("The result for %.2f %c %.2f is %.2f\n", numberA, operator, numberB, result);
 
 	return 0;
 }
