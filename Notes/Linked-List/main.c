@@ -11,6 +11,8 @@ void append(node_t *head, int val); // add item at the end of the linked list
 void push(node_t **head, int val); // add item at the beginning of the linked list
 void pop(node_t **head); // remove the first item
 void remove_last(node_t **pHead); // remove the last item
+void remove_by_index(node_t **head, int index); // remove item by index
+void remove_by_value(node_t **head, int val); // remove item by value
 
 int main(){
 
@@ -18,19 +20,15 @@ int main(){
 	if (head == NULL){
 		return 1;
 	}
-	head->val = 6;
+	head->val = 2;
 	head->next = NULL;
 	node_t **pHead = &head; // create reference to head pointer 
 
-	printf("append 7 and push 67:\n");
-	append(head, 7);
-	push(pHead, 67);
+	append(head, 3);
+	push(pHead, 1);
 
-	print_list(head);
+	remove_by_value(pHead, 3);
 
-	printf("After pop and remove_last:\n");
-	pop(pHead);
-	remove_last(pHead);
 	print_list(head);
 } 
 
@@ -104,3 +102,64 @@ void remove_last(node_t **pHead){
 	previous->next = NULL;
 }
 
+void remove_by_index(node_t **pHead, int index){
+	if(*pHead == NULL || index < 0){
+		return;
+	}
+
+	if(index == 0){
+		node_t *temp = *pHead;
+		*pHead = (*pHead)->next;
+		free(temp);
+		temp = NULL;
+		return;
+	}
+
+	node_t *current = *pHead;
+	node_t *temp_node = NULL;
+
+	for(int i = 0; i < index - 1; i++){
+		if(current->next == NULL){
+			return;
+		}
+		current = current->next; // the node before the node we want to delete
+	}
+
+	temp_node = current->next; // the node to be delete
+
+	current->next = temp_node->next;
+	free(temp_node);
+	temp_node = NULL;
+
+}
+
+void remove_by_value(node_t **pHead, int val){
+	if(*pHead == NULL || pHead == NULL){
+		return;
+	}
+
+	node_t *current = *pHead;
+	node_t *prev = NULL;
+
+	while(current != NULL){
+		if(current->val == val){
+			if(prev == NULL){
+				*pHead = current->next;
+				free(current);
+				return;
+			}
+			else{
+				prev->next = current->next;
+				free(current);
+				return;
+			}
+		}
+		else{
+			prev = current;
+			current = current->next;
+		}
+	}
+
+	printf("Item with value %d not found!\n", val);
+	return;
+}
