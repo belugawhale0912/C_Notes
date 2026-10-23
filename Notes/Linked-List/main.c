@@ -30,6 +30,14 @@ int main(){
 	remove_by_value(pHead, 3);
 
 	print_list(head);
+
+	// free memory
+	while(head != NULL){
+		node_t *tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	return 0;
 } 
 
 
