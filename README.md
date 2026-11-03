@@ -6,5 +6,7 @@ C programming language notes thoughout my journey learning C
 - The rewarding feeling after understanding complex concepts. After learning and understanding about pointers and memory allocation, it feels really rewarding and the stuffs that are abstracted by high level programming languages before are all revealed giving me a more in depth understanding about how computers and programs really work under the hood
 
 # Will I recommend learning C in this time
-- At this point (20 Oct 2026), I just started learning not for a long time,it is more like a revise of what I learnt during CS50X and more detailed concepts such as threads. So far so good, I think it is worth learning because I think having more in depth understanding in low level programming would make me more comfortable to call my self an "Engineer"
+- At this point (20 Oct 2026), I just started learning not for a long time,it is more like a revise of what I learnt during CS50X and more detailed concepts such as threads. So far so good, I think it is worth learning because I think having more in depth understanding in low level programming would reduce the feeling of "imposter syndrome" where I cannot really explain what is happening in the background at the low level.
+
+- (3 Nov 2026) with a slow paced learning, I learnt sockets and wrote a basic implementation of a TCP echo server
  
